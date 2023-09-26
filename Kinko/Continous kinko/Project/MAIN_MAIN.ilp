@@ -1,0 +1,87 @@
+(*2*)
+(* Network 0 *)
+LDN    %I0.0
+AND    %I0.1
+AND    %I0.2
+ANDN    %I0.4
+ANDN    %M0.3
+ANDN    %M0.4
+RS   RS1   %I1.0
+ST   %Q0.0
+(* Network 1 *)
+LD    %Q0.0
+TON   T1, 2000
+__CR_EQ_1
+MOVE    T1, %MW0
+__CR_RESTORE
+ST   %BR0.0
+(* Network 2 *)
+LD    T1
+RS   RS2   %I2.0
+ST   %Q2.0
+(* Network 3 *)
+LD    %Q2.0
+TON   T2, 1000
+__CR_EQ_1
+MOVE    T2, %MW2
+__CR_RESTORE
+ST   %BR0.0
+(* Network 4 *)
+LD    T2
+RS   RS3   %I3.0
+ST   %Q4.0
+(* Network 5 *)
+LD    %Q4.0
+TON   T3, 1000
+__CR_EQ_1
+MOVE    T3, %MW4
+__CR_RESTORE
+ST   %BR0.0
+(* Network 6 *)
+LD    T3
+RS   RS4   %I4.0
+ST   %Q6.0
+(* Network 7 *)
+LD    %Q6.0
+TON   T4, 1000
+__CR_EQ_1
+MOVE    T4, %MW6
+__CR_RESTORE
+ST   %BR0.0
+(* Network 8 *)
+LD    T4
+ANDN    %M8.1
+ST   %Q8.0
+(* Network 9 *)
+LD    %Q8.0
+ANDN    %M9.0
+ANDN    %I0.3
+ANDN    %M9.3
+RS   RS5   %I2.0
+ST   %Q9.0
+(* Network 10 *)
+LD    %Q9.0
+LT    5, %VW2
+ST   %Q10.0
+(* Network 11 *)
+LD    %Q10.0
+TON   T5, 10000
+__CR_EQ_1
+MOVE    T5, %MW8
+__CR_RESTORE
+ST   %Q11.0
+(* Network 12 *)
+LD    %Q9.0
+GT    5, %VW2
+ST   %Q12.0
+(* Network 13 *)
+LD    %Q12.0
+TON   T6, 10000
+__CR_EQ_1
+MOVE    T6, %MW10
+__CR_RESTORE
+ST   %Q13.0
+(* Network 14 *)
+LD    T5
+OR    T6
+ST   %Q14.0

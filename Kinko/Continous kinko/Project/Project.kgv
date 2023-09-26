@@ -1,0 +1,15 @@
+VAR_GLOBAL
+END_VAR
+VAR_GLOBAL
+    RS1    :RS    ;  (*  *)
+    T1     :TON   ;  (*  *)
+    RS2    :RS    ;  (*  *)
+    T2     :TON   ;  (*  *)
+    RS3    :RS    ;  (*  *)
+    T3     :TON   ;  (*  *)
+    RS4    :RS    ;  (*  *)
+    T4     :TON   ;  (*  *)
+    RS5    :RS    ;  (*  *)
+    T6     :TON   ;  (*  *)
+    T5     :TON   ;  (*  *)
+END_VAR
